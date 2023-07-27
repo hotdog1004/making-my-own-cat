@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <header>
-            <h1> Im header !! </h1>
+        <header className='bg-amber-300	pt-5'>
+            <h1 className='font-semibold'> Im header !! </h1>
         </header>
     );
 }
