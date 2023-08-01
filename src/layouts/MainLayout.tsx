@@ -6,7 +6,7 @@ interface MainLayoutProps {
 }
 const MainLayout = ({children}:MainLayoutProps) => {
     return (
-        <main>
+        <main className="bg-white h-4/5">
             {children}
         </main>
     )
