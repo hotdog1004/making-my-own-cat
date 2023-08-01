@@ -7,15 +7,18 @@ import Home from "pages/Home";
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <div className="font-bold text-center">ㅎㅎ</div>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/result" element={<Result />}></Route>
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+        <div className="flex relative z-[1] overflow-scroll mx-0 my-auto max-w-sm min-h-[667px] h-full">
+            <div>
+                <BrowserRouter>
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Home />}></Route>
+                        <Route path="/result" element={<Result />}></Route>
+                    </Routes>
+                    <Footer />
+                </BrowserRouter> 
+            </div>
+        </div>
     )
 }
 
