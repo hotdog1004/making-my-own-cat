@@ -13,6 +13,7 @@ body {
   padding: 0px;
   -ms-overflow-style: none;
   scrollbar-width:  none;
+  background-color: rgb(225, 244, 245);
 }
 
 ::-webkit-scrollbar {
