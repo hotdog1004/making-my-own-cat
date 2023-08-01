@@ -7,8 +7,8 @@ import Home from "pages/Home";
 
 const App = () => {
     return (
-        <div className="flex relative z-[1] overflow-scroll mx-0 my-auto max-w-sm min-h-[667px] h-full">
-            <div>
+        <div className="flex relative z-[1] overflow-scroll mx-auto my-0 max-w-sm min-h-[667px] h-full">
+            <div className="sm:max-w-xl w-full">
                 <BrowserRouter>
                     <Header />
                     <Routes>
