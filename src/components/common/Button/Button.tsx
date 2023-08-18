@@ -33,7 +33,7 @@ interface ButtonProps {
 const Button = ({ onClick, children, disabled }: ButtonProps) => {
   return (
     <button
-      className="rounded-lg m-2 bg-amber-300 cursor-pointer text-xl py-4 px-5 w-full"
+      className="rounded-lg m-2 bg-amber-300 cursor-pointer font-bold  py-4 px-5 w-full hover:bg-[#EBC448] disabled:cursor-default disabled:opacity-50 disabled:bg-slate-300"
       disabled={disabled}
       onClick={onClick}
     >
