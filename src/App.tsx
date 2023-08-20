@@ -4,6 +4,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Result from 'pages/Result';
 import Home from 'pages/Home';
+import Quiz from 'pages/Quiz';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/result" element={<Result />}></Route>
+            <Route path="/quiz" element={<Quiz />}></Route>
           </Routes>
         </BrowserRouter>
         {/* <Footer /> */}
