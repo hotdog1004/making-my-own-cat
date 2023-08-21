@@ -1,10 +1,11 @@
 import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/common/Button/Button';
-
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
-  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e);
+  const movePage = useNavigate();
+  const onClick = () => {
+    movePage('/quiz');
   };
   return (
     <MainLayout>
@@ -14,7 +15,7 @@ const Home = () => {
         <h2>(=◉ᆽ◉=) </h2>
       </div>
       <div className="flex bottom-0">
-        <Button onClick={(e) => onClick(e)} disabled={false}>
+        <Button onClick={() => onClick()} disabled={false}>
           내 고양이 만나러가기
         </Button>
       </div>
