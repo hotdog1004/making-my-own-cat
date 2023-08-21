@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import contents from './contents/questions';
-import Button from 'components/common/Button/Button';
+import Button from 'components/Button';
 const Quiz = () => {
   const [questionNum, setQuestionNum] = useState(0);
 
