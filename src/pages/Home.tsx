@@ -2,6 +2,7 @@ import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
   const movePage = useNavigate();
   const onClick = () => {
