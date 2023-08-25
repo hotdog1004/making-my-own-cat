@@ -15,7 +15,7 @@ const Home = () => {
         <h2>나의 고양이는 어떤 고양이일까?</h2>
         <h2>(=◉ᆽ◉=) </h2>
       </div>
-      <div className="flex bottom-0">
+      <div className="flex absolute w-full max-w-sm bottom-0">
         <Button onClick={() => onClick()} disabled={false}>
           내 고양이 만나러가기
         </Button>
