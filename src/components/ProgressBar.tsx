@@ -10,7 +10,7 @@ const width: widthType = {
 };
 const ProgressBar = (props: { completed: number }) => {
   return (
-    <div className="h-4 w-96 bg-slate-200 rounded-lg mb-20">
+    <div className="h-4 w-96 bg-slate-200 rounded-lg mb-16">
       <div
         className={`h-full bg-amber-300 rounded-lg ${
           width[props.completed]
