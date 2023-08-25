@@ -11,15 +11,16 @@ const Quiz = () => {
   };
   return (
     <>
-      <div className="mb-16">
+      <div className="mb-32 pb-12 relative">
         <ProgressBar completed={completed} />
-        <div className="text-2xl mx-2 mt-16 mb-32 text-center">
+        <div className="text-2xl mx-2 mt-16 text-center">
           {contents[questionNum].question}
         </div>
-        <div className="grid grid-cols-2 justify-center place-items-center	">
+
+        <div className="flex flex-wrap justify-center place-items-center	">
           {contents[questionNum].answers.map((answer, i) => (
             <div
-              className="flex items-center relative justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-32 h-24"
+              className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32"
               key={i}
             >
               {answer}
@@ -28,7 +29,7 @@ const Quiz = () => {
         </div>
       </div>
 
-      <div className="flex">
+      <div className="flex absolute w-full max-w-sm bottom-0">
         <Button onClick={(e) => onClick(e)} disabled={false}>
           선택완료
         </Button>
