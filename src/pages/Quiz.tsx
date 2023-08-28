@@ -9,6 +9,7 @@ const Quiz = () => {
     setQuestionNum(questionNum + 1);
     setCompleted(completed + 1);
   };
+  const [name, setName] = useState('');
   return (
     <>
       <div className="mb-32 pb-12">
@@ -18,20 +19,35 @@ const Quiz = () => {
         </div>
 
         <div className="flex flex-wrap justify-center">
-          {contents[questionNum].answers.map((answer, i) => (
-            <div
-              className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32"
-              key={i}
-            >
-              {answer}
-            </div>
+          {contents[questionNum].answers.map((answer, index) => (
+            <>
+              {contents[questionNum].type === 'check' ? (
+                <div
+                  className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32"
+                  key={index}
+                >
+                  {answer} 체크
+                </div>
+              ) : contents[questionNum].type === 'radio' ? (
+                <div
+                  className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32"
+                  key={index}
+                >
+                  {answer} 라디오
+                </div>
+              ) : (
+                <div>
+                  <input type="text" value={name} className="" />
+                </div>
+              )}
+            </>
           ))}
         </div>
       </div>
 
       <div className="flex absolute w-full max-w-sm bottom-0">
         <Button onClick={(e) => onClick(e)} disabled={false}>
-          선택완료
+          완료
         </Button>
       </div>
     </>
