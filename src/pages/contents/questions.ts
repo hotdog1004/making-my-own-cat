@@ -32,7 +32,7 @@ const questions: QuestionType[] = [
   },
   {
     question: '이름을 입력하세요.',
-    answers: [],
+    answers: ['name'],
     type: 'input',
   },
 ];
