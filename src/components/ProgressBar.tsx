@@ -2,11 +2,12 @@ import React from 'react';
 
 type widthType = Record<number, string>;
 const width: widthType = {
-  1: 'w-[20%]',
-  2: 'w-[40%]',
-  3: 'w-[60%]',
-  4: 'w-[80%]',
-  5: 'w-[100%]',
+  1: 'w-[16%]',
+  2: 'w-[32%]',
+  3: 'w-[48%]',
+  4: 'w-[64%]',
+  5: 'w-[80%]',
+  6: 'w-[100%]',
 };
 const ProgressBar = (props: { completed: number }) => {
   return (
