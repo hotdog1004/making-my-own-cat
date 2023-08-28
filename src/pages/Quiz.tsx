@@ -10,6 +10,9 @@ const Quiz = () => {
     setCompleted(completed + 1);
   };
   const [name, setName] = useState('');
+  const changeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
   return (
     <>
       <div className="mb-32 pb-12">
@@ -17,8 +20,7 @@ const Quiz = () => {
         <div className="text-2xl mx-2 mt-16 text-center">
           {contents[questionNum].question}
         </div>
-
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center w-full">
           {contents[questionNum].answers.map((answer, index) => (
             <>
               {contents[questionNum].type === 'check' ? (
@@ -36,8 +38,13 @@ const Quiz = () => {
                   {answer} 라디오
                 </div>
               ) : (
-                <div>
-                  <input type="text" value={name} className="" />
+                <div className="flex">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={changeInput}
+                    className="w-full border-solid border-2  rounded border-gray-400 p-3 m-2"
+                  />
                 </div>
               )}
             </>
