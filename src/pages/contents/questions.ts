@@ -24,6 +24,10 @@ const questions: QuestionType[] = [
     question: '보석을 선택하세요',
     answers: ['답변1', '답변2', '답변3', '답변4'],
   },
+  {
+    question: '이름을 입력하세요.',
+    answers: [],
+  },
 ];
 
 export default questions;
