@@ -9,7 +9,7 @@ const questions: QuestionType[] = [
   {
     id: 'color',
     question: '색상을 선택하세요',
-    answers: ['답변1', '답변2', '답변3', '답변4'],
+    answers: ['black', 'white', 'yellow', 'brown'],
     type: 'check',
   },
   {
