@@ -1,5 +1,4 @@
 import React from 'react';
-import ColorImg from '../assets/answers/hair_color_yellow.svg';
 interface CheckboxProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id: string;
@@ -21,7 +20,7 @@ const Checkbox = ({ id, checked, onChange, img }: CheckboxProps) => {
         className="hidden"
       />
       <label htmlFor={id} className="cursor-pointer checked:bg-gray-950">
-        <img src={ColorImg} className="w-32 h-32" />
+        <img src={img} className="w-32 h-32" />
       </label>
     </div>
   );
