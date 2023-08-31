@@ -15,9 +15,22 @@ const Quiz = () => {
     setName(e.target.value);
   };
 
-  const changeCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('체크박스 change');
-    console.log(e.target.id);
+  const [checkedItems, setCheckedItems] = useState(new Set());
+
+  const checkedItemsHandler = (id: string, isChecked: boolean) => {
+    if (isChecked) {
+      checkedItems.add(id);
+      setCheckedItems(checkedItems);
+    } else if (!isChecked && checkedItems.has(id)) {
+      checkedItems.delete(id);
+      setCheckedItems(checkedItems);
+    }
+  };
+
+  const [checked, setChecked] = useState(false);
+  const checkHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(!checked);
+    checkedItemsHandler(e.target.id, e.target.checked);
   };
   return (
     <>
@@ -27,18 +40,18 @@ const Quiz = () => {
           {contents[questionNum].question}
         </div>
         <div className="flex flex-wrap justify-center w-full">
-          {contents[questionNum].answers.map((answer, index) => (
-            <Fragment key={index}>
+          {contents[questionNum].answers.map((answer) => (
+            <Fragment key={answer.id}>
               {contents[questionNum].type === 'check' ? (
                 <Checkbox
-                  id={answer}
-                  checked={true}
-                  img="test"
-                  onChange={(e) => changeCheck(e)}
+                  id={answer.id}
+                  checked={checkedItems.has(answer.id)}
+                  img={answer.img}
+                  onChange={(e) => checkHandler(e)}
                 />
               ) : contents[questionNum].type === 'radio' ? (
                 <div className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32">
-                  {answer} 라디오
+                  {answer.id} 라디오
                 </div>
               ) : (
                 <div className="flex">
