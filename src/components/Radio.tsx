@@ -3,11 +3,12 @@ import React from 'react';
 interface RadioProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id: string;
-  checked: boolean;
+  checked?: boolean;
   img: string;
+  name: string;
 }
 
-const Radio = ({ id, checked, onChange, img }: RadioProps) => {
+const Radio = ({ name, id, checked, onChange, img }: RadioProps) => {
   return (
     <div
       className={`${
@@ -15,6 +16,7 @@ const Radio = ({ id, checked, onChange, img }: RadioProps) => {
       } flex items-center justify-center border-2 border-solid  m-3 rounded-md w-40 h-32`}
     >
       <input
+        name={name}
         id={id}
         type="radio"
         checked={checked}
