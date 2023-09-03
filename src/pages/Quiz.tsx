@@ -3,6 +3,7 @@ import contents from './contents/questions';
 import Button from 'components/Button';
 import ProgressBar from 'components/ProgressBar';
 import Checkbox from 'components/Checkbox';
+import Radio from 'components/Radio';
 const Quiz = () => {
   const [questionNum, setQuestionNum] = useState(0);
   const [completed, setCompleted] = useState(1);
@@ -32,6 +33,9 @@ const Quiz = () => {
     setChecked(!checked);
     checkedItemsHandler(e.target.id, e.target.checked);
   };
+
+  const [selectedValue, setSelectedValue] = useState('');
+
   return (
     <>
       <div className="mb-32 pb-12">
@@ -50,9 +54,13 @@ const Quiz = () => {
                   onChange={(e) => checkHandler(e)}
                 />
               ) : contents[questionNum].type === 'radio' ? (
-                <div className="flex items-center justify-center border-2 border-solid border-slate-300 m-3 rounded-md w-40 h-32">
-                  {answer.id} 라디오
-                </div>
+                <Radio
+                  id={answer.id}
+                  img={answer.img}
+                  name={contents[questionNum].id}
+                  onChange={() => setSelectedValue(answer.id)}
+                  checked={selectedValue == answer.id}
+                />
               ) : (
                 <div className="flex">
                   <input
