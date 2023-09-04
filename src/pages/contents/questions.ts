@@ -1,4 +1,7 @@
-import ColorImg from '../../assets/answers/hair_color_yellow.svg';
+import HairYellow from '../../assets/answers/hair_color_yellow.svg';
+import HairBlack from '../../assets/answers/hair_color_black.svg';
+import HairWhite from '../../assets/answers/hair_color_white.svg';
+import HairBrown from '../../assets/answers/hair_color_brown.svg';
 
 interface QuestionType {
   id: string;
@@ -17,10 +20,10 @@ const questions: QuestionType[] = [
     id: 'color',
     question: '색상을 선택하세요',
     answers: [
-      { id: 'black', img: ColorImg },
-      { id: 'white', img: ColorImg },
-      { id: 'yellow', img: ColorImg },
-      { id: 'brown', img: ColorImg },
+      { id: 'black', img: HairYellow },
+      { id: 'white', img: HairBlack },
+      { id: 'yellow', img: HairWhite },
+      { id: 'brown', img: HairBrown },
     ],
     type: 'check',
   },
@@ -28,10 +31,9 @@ const questions: QuestionType[] = [
     id: 'socks',
     question: '양말 모양을 선택하세요',
     answers: [
-      { id: 'black', img: '' },
-      { id: 'white', img: '' },
-      { id: 'yellow', img: '' },
-      { id: 'brown', img: '' },
+      { id: 'black', img: HairBlack },
+      { id: 'white', img: HairWhite },
+      { id: 'yellow', img: HairYellow },
     ],
     type: 'radio',
   },
