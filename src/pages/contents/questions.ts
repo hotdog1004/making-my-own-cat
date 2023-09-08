@@ -3,9 +3,9 @@ import HairBlack from '../../assets/answers/hair_color_black.svg';
 import HairWhite from '../../assets/answers/hair_color_white.svg';
 import HairBrown from '../../assets/answers/hair_color_brown.svg';
 
-interface QuestionType {
+export interface QuestionType {
   id: string;
-  question: string;
+  content: string;
   answers: answerType[];
   type: string;
 }
@@ -18,7 +18,7 @@ interface answerType {
 const questions: QuestionType[] = [
   {
     id: 'color',
-    question: '색상을 선택하세요',
+    content: '색상을 선택하세요',
     answers: [
       { id: 'black', img: HairYellow },
       { id: 'white', img: HairBlack },
@@ -29,7 +29,7 @@ const questions: QuestionType[] = [
   },
   {
     id: 'socks',
-    question: '양말 모양을 선택하세요',
+    content: '양말 모양을 선택하세요',
     answers: [
       { id: 'black', img: HairBlack },
       { id: 'white', img: HairWhite },
@@ -39,7 +39,7 @@ const questions: QuestionType[] = [
   },
   {
     id: 'noseColor',
-    question: '코 색깔을 선택하세요',
+    content: '코 색깔을 선택하세요',
     answers: [
       { id: 'black', img: '' },
       { id: 'white', img: '' },
@@ -48,7 +48,7 @@ const questions: QuestionType[] = [
   },
   {
     id: 'jelly',
-    question: '젤리를 선택하세요',
+    content: '젤리를 선택하세요',
     answers: [
       { id: 'black', img: '' },
       { id: 'white', img: '' },
@@ -58,7 +58,7 @@ const questions: QuestionType[] = [
   },
   {
     id: 'jewel',
-    question: '보석을 선택하세요',
+    content: '보석을 선택하세요',
     answers: [
       { id: 'black', img: '' },
       { id: 'white', img: '' },
@@ -69,7 +69,7 @@ const questions: QuestionType[] = [
   },
   {
     id: 'name',
-    question: '이름을 입력하세요.',
+    content: '이름을 입력하세요.',
     answers: [{ id: 'name', img: '' }],
     type: 'input',
   },
