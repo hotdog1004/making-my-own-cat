@@ -1,22 +1,18 @@
 import React, { Fragment, useState } from 'react';
 import contents from '../../pages/contents/questions';
-import Radio from 'components/Radio';
-const Socks = () => {
-  const [selectedValue, setSelectedValue] = useState('');
+import RadioGroup from 'components/RadioGroup';
+import Button from 'components/Button';
+import { FunnelProp } from 'pages/QuizFunnel';
+const Socks = ({ onNext }: FunnelProp) => {
   return (
-    <div className="flex flex-wrap justify-center w-full">
-      {contents[1].answers.map((answer) => (
-        <Fragment key={answer.id}>
-          <Radio
-            id={answer.id}
-            img={answer.img}
-            name={contents[1].id}
-            onChange={() => setSelectedValue(answer.id)}
-            checked={selectedValue == answer.id}
-          />
-        </Fragment>
-      ))}
-    </div>
+    <>
+      <RadioGroup question={contents[1]} />
+      <div className="flex absolute w-full max-w-sm bottom-0">
+        <Button onClick={(e) => onNext(e)} disabled={false}>
+          완료
+        </Button>
+      </div>
+    </>
   );
 };
 
