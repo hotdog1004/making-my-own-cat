@@ -12,6 +12,16 @@ export interface FunnelProp {
   onNext: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
+type stepType = Record<string, number>;
+const stepWidth: stepType = {
+  HairColor: 1,
+  Socks: 2,
+  NoseColor: 3,
+  Jelly: 4,
+  Jewel: 5,
+  Name: 6,
+};
+
 const QuizFunnel = () => {
   const movePage = useNavigate();
   const [step, setStep] = useState<
@@ -19,7 +29,7 @@ const QuizFunnel = () => {
   >('HairColor');
   return (
     <>
-      <ProgressBar completed={1} />
+      <ProgressBar completed={stepWidth[step]} />
       {step === 'HairColor' && <HairColor onNext={() => setStep('Socks')} />}
       {step === 'Socks' && <Socks onNext={() => setStep('NoseColor')} />}
       {step === 'NoseColor' && <NoseColor onNext={() => setStep('Jelly')} />}
