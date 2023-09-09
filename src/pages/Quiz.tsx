@@ -41,7 +41,7 @@ const Quiz = () => {
       <div className="mb-32 pb-12">
         <ProgressBar completed={completed} />
         <div className="text-2xl mx-2 mt-16 text-center">
-          {contents[questionNum].question}
+          {contents[questionNum].content}
         </div>
         <div className="flex flex-wrap justify-center w-full">
           {contents[questionNum].answers.map((answer) => (
