@@ -40,7 +40,12 @@ const HairColor = ({ onNext }: FunnelProp) => {
         ))}
       </div>
       <div className="flex absolute w-full max-w-sm bottom-0">
-        <Button onClick={(e) => onNext(e)} disabled={false}>
+        <Button
+          onClick={(e) => {
+            onNext(e, checkedItems);
+          }}
+          disabled={false}
+        >
           완료
         </Button>
       </div>
