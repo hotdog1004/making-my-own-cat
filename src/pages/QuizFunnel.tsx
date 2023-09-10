@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export interface FunnelProp {
-  onNext: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onNext: (e: React.MouseEvent<HTMLButtonElement>, param?: any) => void;
 }
 
 type stepType = Record<string, number>;
@@ -27,10 +27,22 @@ const QuizFunnel = () => {
   const [step, setStep] = useState<
     'HairColor' | 'Socks' | 'NoseColor' | 'Jelly' | 'Jewel' | 'Name'
   >('HairColor');
+
+  const [registerData, setRegisterData] = useState({});
+
   return (
     <>
       <ProgressBar completed={stepWidth[step]} />
-      {step === 'HairColor' && <HairColor onNext={() => setStep('Socks')} />}
+      {step === 'HairColor' && (
+        <HairColor
+          onNext={(data, param) => {
+            console.log(data);
+            console.log(param);
+            setRegisterData((prev) => ({ ...prev, HairColor: data.target }));
+            setStep('Socks');
+          }}
+        />
+      )}
       {step === 'Socks' && <Socks onNext={() => setStep('NoseColor')} />}
       {step === 'NoseColor' && <NoseColor onNext={() => setStep('Jelly')} />}
       {step === 'Jelly' && <Jelly onNext={() => setStep('Jewel')} />}
