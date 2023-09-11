@@ -5,7 +5,7 @@ import Button from 'components/Button';
 import { FunnelProp } from 'pages/QuizFunnel';
 
 const HairColor = ({ onNext }: FunnelProp) => {
-  const [checkedItems, setCheckedItems] = useState(new Set());
+  const [checkedItems, setCheckedItems] = useState(new Set<string>());
 
   const checkedItemsHandler = (id: string, isChecked: boolean) => {
     if (isChecked) {
@@ -42,7 +42,7 @@ const HairColor = ({ onNext }: FunnelProp) => {
       <div className="flex absolute w-full max-w-sm bottom-0">
         <Button
           onClick={(e) => {
-            onNext(e, checkedItems);
+            onNext(e, Array.from(checkedItems));
           }}
           disabled={false}
         >
