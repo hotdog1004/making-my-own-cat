@@ -22,6 +22,10 @@ const HairColor = ({ onNext }: FunnelProp) => {
     setChecked(!checked);
     checkedItemsHandler(e.target.id, e.target.checked);
   };
+
+  const getCheckedValues = () => {
+    return Array.from(checkedItems).toString();
+  };
   return (
     <>
       <div className="text-2xl mx-2 mt-16 text-center">
@@ -42,7 +46,7 @@ const HairColor = ({ onNext }: FunnelProp) => {
       <div className="flex absolute w-full max-w-sm bottom-0">
         <Button
           onClick={(e) => {
-            onNext(e, Array.from(checkedItems));
+            onNext(e, getCheckedValues());
           }}
           disabled={false}
         >
