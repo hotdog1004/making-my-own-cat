@@ -9,10 +9,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export interface FunnelProp {
-  onNext: (
-    e: React.MouseEvent<HTMLButtonElement>,
-    param?: string[] | string,
-  ) => void;
+  onNext: (e: React.MouseEvent<HTMLButtonElement>, param: string) => void;
 }
 
 type stepType = Record<string, number>;
@@ -31,25 +28,68 @@ const QuizFunnel = () => {
     'HairColor' | 'Socks' | 'NoseColor' | 'Jelly' | 'Jewel' | 'Name'
   >('HairColor');
 
-  const [registerData, setRegisterData] = useState({});
+  const [registerData, setRegisterData] = useState({
+    hairColor: '',
+    socks: '',
+    noseColor: '',
+    jelly: '',
+    jewel: '',
+    name: '',
+  });
 
   return (
     <>
       <ProgressBar completed={stepWidth[step]} />
+
       {step === 'HairColor' && (
         <HairColor
           onNext={(data, param) => {
-            console.log(param);
-            setRegisterData((prev) => ({ ...prev, HairColor: data.target }));
+            setRegisterData((prev) => ({ ...prev, hairColor: param }));
             setStep('Socks');
           }}
         />
       )}
-      {step === 'Socks' && <Socks onNext={() => setStep('NoseColor')} />}
-      {step === 'NoseColor' && <NoseColor onNext={() => setStep('Jelly')} />}
-      {step === 'Jelly' && <Jelly onNext={() => setStep('Jewel')} />}
-      {step === 'Jewel' && <Jewel onNext={() => setStep('Name')} />}
-      {step === 'Name' && <Name onNext={() => movePage('/result')} />}
+      {step === 'Socks' && (
+        <Socks
+          onNext={(data, param) => {
+            setRegisterData((prev) => ({ ...prev, socks: param }));
+            setStep('NoseColor');
+          }}
+        />
+      )}
+      {step === 'NoseColor' && (
+        <NoseColor
+          onNext={(data, param) => {
+            setRegisterData((prev) => ({ ...prev, noseColor: param }));
+            setStep('Jelly');
+          }}
+        />
+      )}
+      {step === 'Jelly' && (
+        <Jelly
+          onNext={(data, param) => {
+            setRegisterData((prev) => ({ ...prev, jelly: param }));
+            setStep('Jewel');
+          }}
+        />
+      )}
+      {step === 'Jewel' && (
+        <Jewel
+          onNext={(data, param) => {
+            setRegisterData((prev) => ({ ...prev, jewel: param }));
+            setStep('Name');
+          }}
+        />
+      )}
+      {step === 'Name' && (
+        <Name
+          onNext={(data, param) => {
+            setRegisterData((prev) => ({ ...prev, name: param }));
+            console.log(registerData);
+            movePage('/result');
+          }}
+        />
+      )}
     </>
   );
 };
