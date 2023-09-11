@@ -9,7 +9,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export interface FunnelProp {
-  onNext: (e: React.MouseEvent<HTMLButtonElement>, param?: any) => void;
+  onNext: (
+    e: React.MouseEvent<HTMLButtonElement>,
+    param?: string[] | string,
+  ) => void;
 }
 
 type stepType = Record<string, number>;
@@ -36,7 +39,6 @@ const QuizFunnel = () => {
       {step === 'HairColor' && (
         <HairColor
           onNext={(data, param) => {
-            console.log(data);
             console.log(param);
             setRegisterData((prev) => ({ ...prev, HairColor: data.target }));
             setStep('Socks');
