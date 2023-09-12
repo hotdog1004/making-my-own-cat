@@ -4,7 +4,7 @@ import RadioGroup from 'components/RadioGroup';
 import Button from 'components/Button';
 import { FunnelProp } from 'pages/QuizFunnel';
 const Socks = ({ onNext }: FunnelProp) => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState(contents[1].answers[0].id);
   return (
     <>
       <RadioGroup
