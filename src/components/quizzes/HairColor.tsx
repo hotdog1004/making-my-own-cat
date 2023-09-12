@@ -26,10 +26,17 @@ const HairColor = ({ onNext }: FunnelProp) => {
   const getCheckedValues = () => {
     return Array.from(checkedItems).toString();
   };
+
+  const isDisabled = () => {
+    if (checkedItems.size === 0) return true;
+    return checkedItems.size > 1 && !checkedItems.has('white');
+  };
+
   return (
     <>
       <div className="text-2xl mx-2 mt-16 text-center">
         {contents[0].content}
+        <p className="text-base">흰색을 포함한 경우 중복선택이 가능합니다.</p>
       </div>
       <div className="flex flex-wrap justify-center w-full">
         {contents[0].answers.map((answer) => (
@@ -48,7 +55,7 @@ const HairColor = ({ onNext }: FunnelProp) => {
           onClick={(e) => {
             onNext(e, getCheckedValues());
           }}
-          disabled={false}
+          disabled={isDisabled()}
         >
           완료
         </Button>
