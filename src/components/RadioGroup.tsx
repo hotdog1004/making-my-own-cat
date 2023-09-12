@@ -7,7 +7,7 @@ interface RadioGroupProps {
   onChange: (checkedValue: string) => void;
 }
 const RadioGroup = ({ question, onChange }: RadioGroupProps) => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState(question.answers[0].id);
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(e.target.id);
     onChange(e.target.id);
