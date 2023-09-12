@@ -18,11 +18,11 @@ interface answerType {
 const questions: QuestionType[] = [
   {
     id: 'color',
-    content: '색상을 선택하세요',
+    content: '색상을 선택하세요.',
     answers: [
-      { id: 'black', img: HairYellow },
-      { id: 'white', img: HairBlack },
-      { id: 'yellow', img: HairWhite },
+      { id: 'yellow', img: HairYellow },
+      { id: 'black', img: HairBlack },
+      { id: 'white', img: HairWhite },
       { id: 'brown', img: HairBrown },
     ],
     type: 'check',
