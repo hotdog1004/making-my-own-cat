@@ -5,7 +5,7 @@ import contents from '../../pages/contents/questions';
 import { FunnelProp } from 'pages/QuizFunnel';
 
 const NoseColor = ({ onNext }: FunnelProp) => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState(contents[2].answers[0].id);
   return (
     <>
       <RadioGroup
