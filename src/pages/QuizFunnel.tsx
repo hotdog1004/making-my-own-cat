@@ -37,61 +37,75 @@ const QuizFunnel = () => {
     name: '',
   });
 
-  return (
-    <>
-      <ProgressBar completed={stepWidth[step]} />
+  const [isLoading, setIsLoading] = useState(false);
+  const clickResultBtn = () => {
+    setIsLoading(true);
+    setTimeout(function () {
+      setIsLoading(false);
+      movePage('/result');
+    }, 3000);
+  };
+  if (!isLoading) {
+    return (
+      <>
+        <ProgressBar completed={stepWidth[step]} />
 
-      {step === 'HairColor' && (
-        <HairColor
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, hairColor: param }));
-            setStep('Socks');
-          }}
-        />
-      )}
-      {step === 'Socks' && (
-        <Socks
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, socks: param }));
-            setStep('NoseColor');
-          }}
-        />
-      )}
-      {step === 'NoseColor' && (
-        <NoseColor
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, noseColor: param }));
-            setStep('Jelly');
-          }}
-        />
-      )}
-      {step === 'Jelly' && (
-        <Jelly
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, jelly: param }));
-            setStep('Jewel');
-          }}
-        />
-      )}
-      {step === 'Jewel' && (
-        <Jewel
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, jewel: param }));
-            setStep('Name');
-          }}
-        />
-      )}
-      {step === 'Name' && (
-        <Name
-          onNext={(data, param) => {
-            setRegisterData((prev) => ({ ...prev, name: param }));
-            console.log(registerData);
-            movePage('/result');
-          }}
-        />
-      )}
-    </>
-  );
+        {step === 'HairColor' && (
+          <HairColor
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, hairColor: param }));
+              setStep('Socks');
+            }}
+          />
+        )}
+        {step === 'Socks' && (
+          <Socks
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, socks: param }));
+              setStep('NoseColor');
+            }}
+          />
+        )}
+        {step === 'NoseColor' && (
+          <NoseColor
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, noseColor: param }));
+              setStep('Jelly');
+            }}
+          />
+        )}
+        {step === 'Jelly' && (
+          <Jelly
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, jelly: param }));
+              setStep('Jewel');
+            }}
+          />
+        )}
+        {step === 'Jewel' && (
+          <Jewel
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, jewel: param }));
+              setStep('Name');
+            }}
+          />
+        )}
+        {step === 'Name' && (
+          <Name
+            onNext={(data, param) => {
+              setRegisterData((prev) => ({ ...prev, name: param }));
+              clickResultBtn();
+            }}
+          />
+        )}
+      </>
+    );
+  } else
+    return (
+      <div>
+        <h2>당신의 고양이를 찾고있어요</h2>
+      </div>
+    );
 };
 
 export default QuizFunnel;
