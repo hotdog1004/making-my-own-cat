@@ -5,19 +5,33 @@ interface ButtonProps {
   children?: React.ReactNode;
   disabled?: boolean;
   color?: string;
+  type?: string;
 }
 const colors = {
   yellow: 'bg-amber-300 hover:bg-[#EBC448]',
   gray: 'bg-gray-200 hover:bg-gray-300',
 };
-const Button = ({ onClick, children, disabled, color }: ButtonProps) => {
+
+const types = {
+  answer: 'border-solid  border-2 border-slate-300',
+  move: 'bg-amber-300 hover:bg-[#EBC448]',
+};
+const Button = ({ onClick, children, disabled, color, type }: ButtonProps) => {
   const buttonColor = () => {
     if (color === undefined) return `${colors['yellow']}`;
     else return `${colors['gray']}`;
   };
+
+  const buttonType = (type?: string) => {
+    if (type === undefined) return `${types['answer']}`;
+    else return `${types['move']}`;
+  };
   return (
     <button
-      className={`rounded-lg m-2 bg-amber-300 cursor-pointer font-bold  py-4 px-5 w-full disabled:cursor-default disabled:opacity-50 disabled:bg-slate-300 ${buttonColor()}`}
+      type="button"
+      className={`whitespace-pre-wrap text-center rounded-lg m-2 cursor-pointer font-bold py-4 px-5 w-full disabled:cursor-default disabled:opacity-50 disabled:bg-slate-300 ${buttonType(
+        type,
+      )}`}
       disabled={disabled}
       onClick={onClick}
     >
