@@ -10,13 +10,13 @@ const Home = () => {
   };
   return (
     <MainLayout>
-      <div className="h-5/6">
+      <div className="mt-16 text-center">
         <h2>어느날 우연히 냥줍을 하게 된 당신!</h2>
         <h2>나의 고양이는 어떤 고양이일까?</h2>
         <h2>(=◉ᆽ◉=) </h2>
       </div>
       <div className="flex absolute w-full max-w-sm bottom-0">
-        <Button onClick={() => onClick()} disabled={false}>
+        <Button onClick={() => onClick()} disabled={false} type="move">
           내 고양이 만나러가기
         </Button>
       </div>
