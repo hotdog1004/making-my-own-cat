@@ -1,13 +1,19 @@
+/* eslint-disable no-debugger */
 import ProgressBar from 'components/ProgressBar';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import questionList from './contents/questionList';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
+import resultList from './contents/resultList';
 const QuizPage = () => {
   const [resultMap, setResultMap] = useState<Map<string, number>>(
     new Map<string, number>(),
   );
-
+  useEffect(() => {
+    if (questionNumber === questionList.length) {
+      loadingProcess();
+    }
+  }, [resultMap]);
   const handleAnswerClick = (answerType: string) => {
     setResultMap((prevResultMap) => {
       const newResultMap = new Map(prevResultMap);
@@ -19,28 +25,47 @@ const QuizPage = () => {
   };
   const movePage = useNavigate();
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [completed, setCompleted] = useState(1);
   const onClick = (
     e: React.MouseEvent<HTMLButtonElement>,
     answerType: string,
   ) => {
     handleAnswerClick(answerType);
-    if (questionNumber === questionList.length - 1) loadingProcess();
+
     setQuestionNumber(questionNumber + 1);
-    setCompleted(completed + 1);
+  };
+
+  const getResultType = () => {
+    let result = '';
+    resultMap.forEach((value, key) => {
+      if (value >= 2) result += key;
+    });
+    console.log('result  : ', result);
+    return result;
+  };
+
+  const getResultIdx = () => {
+    const sortedResult = getResultType().split('').sort().join('');
+    const resultIdx = resultList.findIndex((result) => {
+      return result.type.split('').sort().join('') === sortedResult;
+    });
+    return resultIdx;
   };
 
   const loadingProcess = () => {
-    console.log('마지막 map 체크 >  ', resultMap);
+    // getResultType();
+
     setTimeout(function () {
-      movePage('/result');
+      movePage(`/result?resultType=${getResultIdx()}`);
     }, 3000);
   };
   if (questionNumber < questionList.length) {
     return (
       <>
         <div className="mb-32 pb-12">
-          <ProgressBar completed={completed} />
+          <ProgressBar
+            totalNumber={questionList.length}
+            currentNumber={questionNumber + 1}
+          />
           <div className="whitespace-pre-wrap flex text-xl mx-2 my-20 justify-center font-semibold text-center">
             {questionList[questionNumber].content}
           </div>
