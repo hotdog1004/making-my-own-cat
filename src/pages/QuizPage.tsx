@@ -39,7 +39,6 @@ const QuizPage = () => {
     resultMap.forEach((value, key) => {
       if (value >= 2) result += key;
     });
-    console.log('result  : ', result);
     return result;
   };
 
@@ -52,8 +51,6 @@ const QuizPage = () => {
   };
 
   const loadingProcess = () => {
-    // getResultType();
-
     setTimeout(function () {
       movePage(`/result?resultType=${getResultIdx()}`);
     }, 3000);
