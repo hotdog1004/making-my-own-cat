@@ -52,7 +52,7 @@ const QuizPage = () => {
 
   const loadingProcess = () => {
     setTimeout(function () {
-      movePage(`/result?resultType=${getResultIdx()}`);
+      movePage(`/result?type=${getResultIdx()}`);
     }, 3000);
   };
   if (questionNumber < questionList.length) {
