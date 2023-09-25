@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,12 @@ const Home = () => {
   const onClick = () => {
     movePage('/quiz');
   };
+
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO);
+    }
+  }, [window.Kakao]);
   return (
     <MainLayout>
       <div className="mt-16 text-center">
