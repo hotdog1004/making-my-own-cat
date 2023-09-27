@@ -43,7 +43,8 @@ const Result = () => {
           </div>
           <div className="flex justify-center mt-2">
             <KaKaoShareBtn
-              title={resultList[result].catType}
+              subtitle={resultList[result].subtitle}
+              title={resultList[result].title}
               image={resultList[result].img}
               resultType={result}
             />
