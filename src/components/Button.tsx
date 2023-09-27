@@ -4,24 +4,14 @@ interface ButtonProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   children?: React.ReactNode;
   disabled?: boolean;
-  color?: string;
   type?: string;
 }
-const colors = {
-  yellow: 'bg-amber-300 hover:bg-[#EBC448]',
-  gray: 'bg-gray-200 hover:bg-gray-300',
-};
 
 const types = {
-  answer: 'border-solid  border-2 border-slate-300',
+  answer: 'border-solid border-2 bg-white',
   move: 'bg-amber-300 hover:bg-[#EBC448]',
 };
-const Button = ({ onClick, children, disabled, color, type }: ButtonProps) => {
-  const buttonColor = () => {
-    if (color === undefined) return `${colors['yellow']}`;
-    else return `${colors['gray']}`;
-  };
-
+const Button = ({ onClick, children, disabled, type }: ButtonProps) => {
   const buttonType = (type?: string) => {
     if (type === undefined) return `${types['answer']}`;
     else return `${types['move']}`;
