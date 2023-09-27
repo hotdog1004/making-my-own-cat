@@ -5,7 +5,7 @@ const ProgressBar = (props: { totalNumber: number; currentNumber: number }) => {
     return 100 * (currentNumber / totalNumber);
   };
   return (
-    <div className="h-3 w-96 bg-slate-200 rounded-lg mt-14 mb-16 ">
+    <div className="h-3 w-96 bg-white rounded-lg mt-14 mb-16 ">
       <div
         style={{
           width: `${getCompleted(props.totalNumber, props.currentNumber)}%`,
