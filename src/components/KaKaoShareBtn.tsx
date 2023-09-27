@@ -2,17 +2,24 @@ import React from 'react';
 import kakaoBtn from '../assets/button_kakao.svg';
 
 interface KakaoBtnProps {
+  subtitle: string;
   title: string;
   image: string;
   resultType: number;
 }
-const KaKaoShareBtn = ({ title, image, resultType }: KakaoBtnProps) => {
+const KaKaoShareBtn = ({
+  subtitle,
+  title,
+  image,
+  resultType,
+}: KakaoBtnProps) => {
   const shareKakaoMessage = () => {
     window.Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '제목제목',
-        description: '설명~~~',
+        title: `${subtitle} '${title}'`,
+        description:
+          '나에게 맞는 고양이를 찾아보자!\n나와 맞는 고양이는 어떤 유형일까?',
         imageUrl: '',
         link: {
           webUrl: 'http://localhost:3000/',
