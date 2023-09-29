@@ -5,13 +5,13 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import resultList from './contents/resultList';
 import KaKaoShareBtn from 'components/KaKaoShareBtn';
 import linkCopyBtn from '../assets/button_link_copy.png';
+import ErrorPage from './ErrorPage';
+import specialCat from '../assets/special_cat_3.png';
+
 const Result = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const result = Number(searchParams.get('type') ?? '-1');
   const movePage = useNavigate();
-  const onClick = () => {
-    movePage('/quiz');
-  };
 
   const url = `http://localhost:3000/result/type=${result}`;
 
@@ -23,20 +23,37 @@ const Result = () => {
       alert('링크 복사에 실패하였습니다.');
     }
   };
+
   if (result >= 0 && result <= resultList.length) {
     return (
       <MainLayout>
-        <div className="mt-16 text-center">결과페이지다{result}</div>
-        <h3>{resultList[result].type}</h3>
+        <div className="mt-16 text-center text-slate-600 font-semibold">
+          {resultList[result].subtitle}
+        </div>
+        <p className="text-2xl font-bold text-center">
+          <mark className="inline-block	pb-2 bg-amber-300	leading-[0.5rem]">
+            {resultList[result].title}
+          </mark>
+        </p>
+        <div className="flex flex-col items-center	justify-center my-3">
+          <img
+            className="w-1/2 rounded-lg"
+            src={specialCat}
+            alt="고양이이미지"
+          ></img>
+        </div>
+        <div className="whitespace-pre-line	my-3">
+          {resultList[result].content}
+        </div>
 
-        <div className="flex flex-col absolute w-full max-w-sm bottom-0">
+        <div className="flex flex-col w-full max-w-sm bottom-0">
           <div className="flex">
             <Button
-              onClick={(e) => {
-                onClick();
+              onClick={() => {
+                movePage('/');
               }}
               disabled={false}
-              color="gray"
+              type="move"
             >
               테스트 다시 하기
             </Button>
@@ -51,7 +68,7 @@ const Result = () => {
             <button
               type="button"
               className="cursor-pointer rounded-lg px-3"
-              onClick={(e) => {
+              onClick={() => {
                 handleCopyClipBoard(url);
               }}
             >
@@ -71,22 +88,7 @@ const Result = () => {
       </MainLayout>
     );
   } else {
-    return (
-      <MainLayout>
-        <div className="mt-16 text-center">잘못된 결과</div>
-        <div className="flex absolute w-full max-w-sm bottom-0">
-          <Button
-            onClick={(e) => {
-              onClick();
-            }}
-            disabled={false}
-            color="gray"
-          >
-            테스트 다시 하기
-          </Button>
-        </div>
-      </MainLayout>
-    );
+    return <ErrorPage />;
   }
 };
 
