@@ -81,7 +81,7 @@ const QuizPage = () => {
   } else {
     return (
       <>
-        <div className="mb-32 pb-12">
+        <div className="flex flex-col items-center	justify-center h-full">
           <h1>당신과 맞는 고양이를 찾고 있어요...</h1>
         </div>
       </>
