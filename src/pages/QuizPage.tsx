@@ -5,6 +5,7 @@ import questionList from './contents/questionList';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
 import resultList from './contents/resultList';
+import MainLayout from 'layouts/MainLayout';
 const QuizPage = () => {
   const [resultMap, setResultMap] = useState<Map<string, number>>(
     new Map<string, number>(),
@@ -57,26 +58,24 @@ const QuizPage = () => {
   };
   if (questionNumber < questionList.length) {
     return (
-      <>
-        <div className="mb-32 pb-12">
-          <ProgressBar
-            totalNumber={questionList.length}
-            currentNumber={questionNumber + 1}
-          />
-          <div className="whitespace-pre-wrap flex text-xl mx-2 my-20 justify-center font-semibold text-center">
-            {questionList[questionNumber].content}
-          </div>
-          <div className="flex flex-wrap justify-center w-full">
-            {questionList[questionNumber].answers.map((answer, index) => (
-              <Fragment key={index}>
-                <Button onClick={(e) => onClick(e, answer.value)}>
-                  {answer.content}
-                </Button>
-              </Fragment>
-            ))}
-          </div>
+      <MainLayout>
+        <ProgressBar
+          totalNumber={questionList.length}
+          currentNumber={questionNumber + 1}
+        />
+        <div className="whitespace-pre-wrap flex text-xl mx-2 my-20 justify-center font-semibold text-center">
+          {questionList[questionNumber].content}
         </div>
-      </>
+        <div className="flex flex-wrap justify-center w-full">
+          {questionList[questionNumber].answers.map((answer, index) => (
+            <Fragment key={index}>
+              <Button onClick={(e) => onClick(e, answer.value)}>
+                {answer.content}
+              </Button>
+            </Fragment>
+          ))}
+        </div>
+      </MainLayout>
     );
   } else {
     return (
