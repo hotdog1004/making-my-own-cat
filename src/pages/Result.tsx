@@ -42,7 +42,7 @@ const Result = () => {
             alt="고양이이미지"
           ></img>
         </div>
-        <div className="whitespace-pre-line	my-3">
+        <div className="whitespace-pre-line	my-6">
           {resultList[result].content}
         </div>
 
@@ -85,6 +85,9 @@ const Result = () => {
             </button>
           </div>
         </div>
+        <p className="text-sm text-center text-slate-600 my-6">
+          Copyright 2023. Gyeol all rights reserved.
+        </p>
       </MainLayout>
     );
   } else {
