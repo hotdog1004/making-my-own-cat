@@ -6,7 +6,7 @@ import QuizPage from 'pages/QuizPage';
 import ErrorPage from 'pages/ErrorPage';
 const App = () => {
   return (
-    <div className="flex relative z-[1] overflow-scroll mx-auto my-0 max-w-sm min-h-[667px] h-full">
+    <div className="flex relative z-[1] overflow-y-auto  mx-auto my-0 max-w-sm min-h-[667px] h-full">
       <div className="sm:max-w-xl w-full ">
         <BrowserRouter>
           <Routes>
