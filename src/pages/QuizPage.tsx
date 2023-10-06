@@ -81,7 +81,9 @@ const QuizPage = () => {
     return (
       <>
         <div className="flex flex-col items-center	justify-center h-full">
-          <h1>당신과 맞는 고양이를 찾고 있어요...</h1>
+          <p className="text-xl font-semibold">
+            당신과 맞는 고양이를 찾고 있어요...
+          </p>
         </div>
       </>
     );
