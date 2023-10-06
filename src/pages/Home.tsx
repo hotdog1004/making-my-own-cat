@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
-
+import cat from '../assets/cat.png';
+import bubble from '../assets/bubble.png';
 const Home = () => {
   const movePage = useNavigate();
   const onClick = () => {
@@ -17,9 +18,8 @@ const Home = () => {
   return (
     <MainLayout>
       <div className="flex flex-col items-center	justify-center h-full">
-        <h2>어느날 우연히 냥줍을 하게 된 당신!</h2>
-        <h2>나와 어울리는 고양이는 어떤 고양이일까?</h2>
-        <h2>(=◉ᆽ◉=) </h2>
+        <img className="w-9/12" src={bubble} alt="말풍선이미지"></img>
+        <img className="w-1/2" src={cat} alt="고양이이미지"></img>
       </div>
       <div className="flex absolute w-full max-w-sm bottom-0 pb-8">
         <Button onClick={() => onClick()} disabled={false} type="move">
