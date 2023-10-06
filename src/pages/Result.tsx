@@ -24,7 +24,7 @@ const Result = () => {
     }
   };
 
-  if (result >= 0 && result <= resultList.length) {
+  if (result >= 0 && result < resultList.length) {
     return (
       <MainLayout>
         <div className="mt-16 text-center text-slate-600 font-semibold">
