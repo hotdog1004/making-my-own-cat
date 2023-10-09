@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Result from 'pages/Result';
 import Home from 'pages/Home';
 import QuizPage from 'pages/QuizPage';
 import ErrorPage from 'pages/ErrorPage';
 const App = () => {
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO);
+    }
+  }, [window.Kakao]);
+
   return (
     <div className="flex relative z-[1] overflow-y-auto  mx-auto my-0 max-w-sm min-h-[667px] h-full">
       <div className="sm:max-w-xl w-full ">
