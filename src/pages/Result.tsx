@@ -42,7 +42,7 @@ const Result = () => {
             alt="고양이이미지"
           ></img>
         </div>
-        <div className="whitespace-pre-line	my-6">
+        <div className="whitespace-pre-line	my-6 mx-4">
           {resultList[result].content}
         </div>
 
