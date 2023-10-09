@@ -10,11 +10,6 @@ const Home = () => {
     movePage('/quiz');
   };
 
-  useEffect(() => {
-    if (!window.Kakao.isInitialized()) {
-      window.Kakao.init(process.env.REACT_APP_KAKAO);
-    }
-  }, [window.Kakao]);
   return (
     <MainLayout>
       <div className="flex flex-col items-center	justify-center h-full">
