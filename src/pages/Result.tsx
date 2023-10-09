@@ -13,7 +13,7 @@ const Result = () => {
   const result = Number(searchParams.get('type') ?? '-1');
   const movePage = useNavigate();
 
-  const url = `http://localhost:3000/result?type=${result}`;
+  const url = `https://find-my-cat.netlify.app/result?type=${result}`;
 
   const handleCopyClipBoard = async (link: string) => {
     try {
