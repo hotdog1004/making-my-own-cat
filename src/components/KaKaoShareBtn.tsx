@@ -1,5 +1,6 @@
 import React from 'react';
 import kakaoBtn from '../assets/button_kakao.svg';
+import cat from 'images/cat.png';
 
 interface KakaoBtnProps {
   subtitle: string;
@@ -20,25 +21,25 @@ const KaKaoShareBtn = ({
         title: `${subtitle} '${title}'`,
         description:
           '나에게 맞는 고양이를 찾아보자!\n나와 맞는 고양이는 어떤 유형일까?',
-        imageUrl: '',
+        imageUrl: 'https://find-my-cat.netlify.app/images/cat.png',
         link: {
-          webUrl: 'http://localhost:3000/',
-          mobileWebUrl: 'http://localhost:3000/',
+          webUrl: 'https://find-my-cat.netlify.app',
+          mobileWebUrl: 'https://find-my-cat.netlify.app',
         },
       },
       buttons: [
         {
           title: '결과보기',
           link: {
-            webUrl: `http://localhost:3000/result/?type=${resultType}`,
-            mobileWebUrl: `http://localhost:3000/result/?type=${resultType}`,
+            webUrl: `https://find-my-cat.netlify.app/result?type=${resultType}`,
+            mobileWebUrl: `https://find-my-cat.netlify.app/result?type=${resultType}`,
           },
         },
         {
           title: '테스트하기',
           link: {
-            webUrl: 'http://localhost:3000/',
-            mobileWebUrl: 'http://localhost:3000/',
+            webUrl: 'https://find-my-cat.netlify.app',
+            mobileWebUrl: 'https://find-my-cat.netlify.app',
           },
         },
       ],
