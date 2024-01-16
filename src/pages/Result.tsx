@@ -47,18 +47,7 @@ const Result = () => {
         </div>
 
         <div className="flex flex-col w-full max-w-sm bottom-0">
-          <div className="flex">
-            <Button
-              onClick={() => {
-                movePage('/');
-              }}
-              disabled={false}
-              type="move"
-            >
-              테스트 다시 하기
-            </Button>
-          </div>
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-center mt-2 mb-2">
             <KaKaoShareBtn
               subtitle={resultList[result].subtitle}
               title={resultList[result].title}
@@ -83,6 +72,27 @@ const Result = () => {
                 </span>
               </div>
             </button>
+          </div>
+          <div className="flex">
+            <Button
+              onClick={() => {
+                movePage('/');
+              }}
+              disabled={false}
+              type="move"
+            >
+              테스트 다시 하기
+            </Button>
+          </div>
+          <div className="flex">
+            <Button
+              onClick={() => {
+                movePage('/all');
+              }}
+              disabled={false}
+            >
+              다른 유형 보러가기
+            </Button>
           </div>
         </div>
         <p className="text-sm text-center text-slate-600 my-6">
