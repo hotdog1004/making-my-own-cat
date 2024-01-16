@@ -25,7 +25,6 @@ const ErrorPage = () => {
           onClick={() => {
             movePage('/');
           }}
-          disabled={false}
           type="yellow"
         >
           테스트 다시 하기

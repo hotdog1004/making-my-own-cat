@@ -17,7 +17,7 @@ const Home = () => {
         <img className="w-1/2" src={cat} alt="고양이이미지"></img>
       </div>
       <div className="flex absolute w-full max-w-sm bottom-0 pb-8">
-        <Button onClick={() => onClick()} disabled={false} type="yellow">
+        <Button onClick={() => onClick()} type="yellow">
           내 고양이 만나러가기
         </Button>
       </div>

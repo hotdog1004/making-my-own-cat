@@ -78,7 +78,6 @@ const Result = () => {
               onClick={() => {
                 movePage('/');
               }}
-              disabled={false}
               type="yellow"
             >
               테스트 다시 하기
@@ -89,7 +88,6 @@ const Result = () => {
               onClick={() => {
                 movePage('/all');
               }}
-              disabled={false}
               type="light"
             >
               다른 유형 보러가기

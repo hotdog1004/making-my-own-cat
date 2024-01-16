@@ -16,7 +16,7 @@ const types: buttonType = {
   yellow: 'bg-amber-300 hover:bg-[#EBC448]',
   grey: 'bg-slate-100 hover:bg-slate-200',
 };
-const Button = ({ onClick, children, disabled, type }: ButtonProps) => {
+const Button = ({ onClick, children, disabled = false, type }: ButtonProps) => {
   const buttonType = (type?: string) => {
     return type ? types[type] : types['light'];
   };
