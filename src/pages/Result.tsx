@@ -79,7 +79,7 @@ const Result = () => {
                 movePage('/');
               }}
               disabled={false}
-              type="move"
+              type="yellow"
             >
               테스트 다시 하기
             </Button>
@@ -90,6 +90,7 @@ const Result = () => {
                 movePage('/all');
               }}
               disabled={false}
+              type="light"
             >
               다른 유형 보러가기
             </Button>

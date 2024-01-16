@@ -26,7 +26,7 @@ const ErrorPage = () => {
             movePage('/');
           }}
           disabled={false}
-          type="move"
+          type="yellow"
         >
           테스트 다시 하기
         </Button>
