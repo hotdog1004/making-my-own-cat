@@ -88,7 +88,7 @@ const Result = () => {
               onClick={() => {
                 movePage('/all');
               }}
-              type="light"
+              type="grey"
             >
               다른 유형 보러가기
             </Button>
