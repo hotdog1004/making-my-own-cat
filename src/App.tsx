@@ -5,6 +5,7 @@ import Home from 'pages/Home';
 import QuizPage from 'pages/QuizPage';
 import ErrorPage from 'pages/ErrorPage';
 import RouteChangeTracker from 'RouteChangeTracker';
+import AllResult from 'pages/AllResult';
 
 const App = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/" element={<Home />}></Route>
       <Route path="/result" element={<Result />}></Route>
       <Route path="/quiz" element={<QuizPage />}></Route>
+      <Route path="/all" element={<AllResult />}></Route>
       <Route path="/*" element={<ErrorPage />}></Route>
     </Routes>
   );
