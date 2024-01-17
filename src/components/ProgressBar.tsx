@@ -6,7 +6,7 @@ const ProgressBar = (props: { totalNumber: number; currentNumber: number }) => {
   };
   return (
     <div className="mt-14 flex flex-col items-center justify-center">
-      <span className="text-lg">
+      <span className="text-lg font-semibold">
         {props.currentNumber}/{props.totalNumber}
       </span>
       <div className="h-3 w-96 bg-white rounded-lg mt-2">
