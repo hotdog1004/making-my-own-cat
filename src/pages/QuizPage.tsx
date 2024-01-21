@@ -6,6 +6,7 @@ import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
 import resultList from './contents/resultList';
 import MainLayout from 'layouts/MainLayout';
+
 const QuizPage = () => {
   const [resultMap, setResultMap] = useState<Map<string, number>>(
     new Map<string, number>(),
@@ -59,6 +60,17 @@ const QuizPage = () => {
   if (questionNumber < questionList.length) {
     return (
       <MainLayout>
+        <div className="flex mt-4 justify-end ">
+          <button
+            type="button"
+            className="cursor-pointer"
+            onClick={() => {
+              movePage('/');
+            }}
+          >
+            <span className="font-bold text-slate-700 mr-1">처음으로</span>
+          </button>
+        </div>
         <ProgressBar
           totalNumber={questionList.length}
           currentNumber={questionNumber + 1}
