@@ -5,7 +5,7 @@ const ProgressBar = (props: { totalNumber: number; currentNumber: number }) => {
     return 100 * (currentNumber / totalNumber);
   };
   return (
-    <div className="mt-14 flex flex-col items-center justify-center">
+    <div className="mt-2 flex flex-col items-center justify-center">
       <span className="text-lg font-semibold">
         {props.currentNumber}/{props.totalNumber}
       </span>
