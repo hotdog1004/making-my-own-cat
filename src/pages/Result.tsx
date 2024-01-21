@@ -94,9 +94,6 @@ const Result = () => {
             </Button>
           </div>
         </div>
-        <p className="text-sm text-center text-slate-600 my-6">
-          Copyright 2023. Gyeol all rights reserved.
-        </p>
       </MainLayout>
     );
   } else {
