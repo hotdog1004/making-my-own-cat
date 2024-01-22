@@ -31,10 +31,8 @@ const AllResult = () => {
               <p className="text-sm font-semibold whitespace-pre-line">
                 {result.subtitle}
               </p>
-              <p className="text-lg font-semibold">
-                <p className="inline bg-gradient-to-b from-transparent from-30% to-amber-300 to-70%">
-                  {result.title}
-                </p>
+              <p className="text-lg font-semibold inline bg-gradient-to-b from-transparent from-30% to-amber-300 to-70%">
+                {result.title}
               </p>
             </div>
           </div>
