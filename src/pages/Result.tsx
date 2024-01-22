@@ -30,11 +30,11 @@ const Result = () => {
         <div className="mt-16 text-center text-slate-600 font-semibold">
           {resultList[result].subtitle}
         </div>
-        <p className="text-2xl font-bold text-center">
-          <mark className="inline-block	pb-2 bg-amber-300	leading-[0.5rem]">
+        <div className="text-center">
+          <p className="text-2xl font-bold inline bg-gradient-to-b from-transparent from-30% to-amber-300 to-70%">
             {resultList[result].title}
-          </mark>
-        </p>
+          </p>
+        </div>
         <div className="flex flex-col items-center	justify-center my-3">
           <img
             className="w-1/2 rounded-lg"
