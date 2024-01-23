@@ -17,7 +17,7 @@ const resultList: Result[] = [
     subtitle: `집사도 좋지만 
     나만의 자유시간도 중요하다냥!😺`,
     title: '독립적이고 자유로운 고양이',
-    img: '',
+    img: 'cat_0.webp',
   },
   {
     type: 'INTP',
@@ -29,7 +29,7 @@ const resultList: Result[] = [
     subtitle: `집사도 좋지만 
     나만의 시간도 필요하다냥!😺`,
     title: '독립적이고 조용한 고양이',
-    img: '',
+    img: 'cat_1.webp',
   },
   {
     type: 'ENTJ',
@@ -43,7 +43,7 @@ const resultList: Result[] = [
     subtitle: `더! 더! 더! 놀고싶어! 
     집사 좋아! 집사 최고!😸`,
     title: '에너지가 넘치는 개냥이',
-    img: '',
+    img: 'cat_2.webp',
   },
   {
     type: 'ENTP',
@@ -55,7 +55,7 @@ const resultList: Result[] = [
     subtitle: `세상은 호기심천국! 
     난 궁금한 건 못참는다냥!😹`,
     title: '활발하고 호기심 많은 고양이',
-    img: '',
+    img: 'cat_3.webp',
   },
   {
     type: 'INFJ',
@@ -67,7 +67,7 @@ const resultList: Result[] = [
     subtitle: `집사야 
     난 너만 있으면 된다냥!😻`,
     title: '집사바라기 개냥이',
-    img: '',
+    img: 'cat_4.webp',
   },
   {
     type: 'INFP',
@@ -79,7 +79,7 @@ const resultList: Result[] = [
     subtitle: `세상은 두려움천국! 
     난 집사만 있으면 된다냥!😻`,
     title: '예민하지만 집사바라기 고양이',
-    img: '',
+    img: 'cat_5.webp',
   },
   {
     type: 'ENFJ',
@@ -91,7 +91,7 @@ const resultList: Result[] = [
     subtitle: `사회생활? 
     나에겐 누워서 츄르먹기다냥!😽`,
     title: '사회성 만렙 고양이',
-    img: '',
+    img: 'cat_6.webp',
   },
   {
     type: 'ENFP',
@@ -103,7 +103,7 @@ const resultList: Result[] = [
     subtitle: `집사야 나랑 더 놀자! 
     근데 이건 뭐냥?😺`,
     title: '활발하고 호기심 많은 고양이',
-    img: '',
+    img: 'cat_7.webp',
   },
   {
     type: 'ISTJ',
@@ -115,7 +115,7 @@ const resultList: Result[] = [
     subtitle: `집사야! 
     나 좀 봐줘라냥!😻`,
     title: '조용하지만 집사바라기 고양이',
-    img: '',
+    img: 'cat_8.webp',
   },
   {
     type: 'ISFJ',
@@ -127,7 +127,7 @@ const resultList: Result[] = [
     subtitle: `무서운 건 싫어! 
     그래도 궁금한 건 못참아!👀`,
     title: '겁도 호기심도 많은 고양이',
-    img: '',
+    img: 'cat_9.webp',
   },
   {
     type: 'ESTJ',
@@ -139,7 +139,7 @@ const resultList: Result[] = [
     subtitle: `집사도 좋지만 
     다른 사람들도 좋다냥!😻`,
     title: '조용한 개냥이',
-    img: '',
+    img: 'cat_10.webp',
   },
   {
     type: 'ESFJ',
@@ -151,7 +151,7 @@ const resultList: Result[] = [
     subtitle: `Looking for attention~
     관심을 달라냥!😽`,
     title: '사람을 좋아하는 관종냥',
-    img: '',
+    img: 'cat_11.webp',
   },
   {
     type: 'ISTP',
@@ -163,7 +163,7 @@ const resultList: Result[] = [
     subtitle: `집사야 나랑 더 놀자! 
     근데 이건 뭐냥?😺`,
     title: '활동적이고 호기심 많은 고양이',
-    img: '',
+    img: 'cat_12.webp',
   },
   {
     type: 'ISFP',
@@ -175,7 +175,7 @@ const resultList: Result[] = [
     subtitle: `내게 필요한건 
     ONLY 집사의 관심뿐..!😻`,
     title: '집사 한정 관종 고양이',
-    img: '',
+    img: 'cat_13.webp',
   },
   {
     type: 'ESTP',
@@ -187,7 +187,7 @@ const resultList: Result[] = [
     subtitle: `나는야 에너자이저! 
     더 놀자 집사야!😸`,
     title: '에너지가 넘치는 고양이',
-    img: '',
+    img: 'cat_14.webp',
   },
   {
     type: 'ESFP',
@@ -199,7 +199,7 @@ const resultList: Result[] = [
     subtitle: `집사도 좋고! 
     다른 사람도 좋다냥!😽`,
     title: '사람을 좋아하는 개냥이',
-    img: '',
+    img: 'cat_15.webp',
   },
 ];
 
