@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
-import cat from '../assets/cat.png';
-import bubble from '../assets/bubble.png';
+import cat from '../assets/cat.webp';
+import bubble from '../assets/bubble.webp';
 const Home = () => {
   const movePage = useNavigate();
   const onClick = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         <img className="w-1/2" src={cat} alt="고양이이미지"></img>
       </div>
       <div className="flex absolute w-full max-w-sm bottom-0 pb-8">
-        <Button onClick={() => onClick()} disabled={false} type="move">
+        <Button onClick={() => onClick()} type="yellow">
           내 고양이 만나러가기
         </Button>
       </div>

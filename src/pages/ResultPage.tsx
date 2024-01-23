@@ -6,9 +6,8 @@ import resultList from './contents/resultList';
 import KaKaoShareBtn from 'components/KaKaoShareBtn';
 import linkCopyBtn from '../assets/button_link_copy.png';
 import ErrorPage from './ErrorPage';
-import specialCat from '../assets/special_cat_3.png';
 
-const Result = () => {
+const ResultPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const result = Number(searchParams.get('type') ?? '-1');
   const movePage = useNavigate();
@@ -30,35 +29,24 @@ const Result = () => {
         <div className="mt-16 text-center text-slate-600 font-semibold">
           {resultList[result].subtitle}
         </div>
-        <p className="text-2xl font-bold text-center">
-          <mark className="inline-block	pb-2 bg-amber-300	leading-[0.5rem]">
+        <div className="text-center">
+          <p className="text-2xl font-bold inline bg-gradient-to-b from-transparent from-30% to-amber-300 to-70%">
             {resultList[result].title}
-          </mark>
-        </p>
+          </p>
+        </div>
         <div className="flex flex-col items-center	justify-center my-3">
           <img
-            className="w-1/2 rounded-lg"
-            src={specialCat}
+            className="w-3/4 rounded-lg"
+            src={require(`../assets/result/${resultList[result].img}`)}
             alt="고양이이미지"
-          ></img>
+          />
         </div>
         <div className="whitespace-pre-line	my-6 mx-4">
           {resultList[result].content}
         </div>
 
         <div className="flex flex-col w-full max-w-sm bottom-0">
-          <div className="flex">
-            <Button
-              onClick={() => {
-                movePage('/');
-              }}
-              disabled={false}
-              type="move"
-            >
-              테스트 다시 하기
-            </Button>
-          </div>
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-center mt-2 mb-2">
             <KaKaoShareBtn
               subtitle={resultList[result].subtitle}
               title={resultList[result].title}
@@ -84,10 +72,27 @@ const Result = () => {
               </div>
             </button>
           </div>
+          <div className="flex">
+            <Button
+              onClick={() => {
+                movePage('/');
+              }}
+              type="yellow"
+            >
+              테스트 다시 하기
+            </Button>
+          </div>
+          <div className="flex">
+            <Button
+              onClick={() => {
+                movePage('/all');
+              }}
+              type="grey"
+            >
+              다른 유형 보러가기
+            </Button>
+          </div>
         </div>
-        <p className="text-sm text-center text-slate-600 my-6">
-          Copyright 2023. Gyeol all rights reserved.
-        </p>
       </MainLayout>
     );
   } else {
@@ -95,4 +100,4 @@ const Result = () => {
   }
 };
 
-export default Result;
+export default ResultPage;
