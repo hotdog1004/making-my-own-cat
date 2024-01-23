@@ -2,8 +2,8 @@ import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
-import cat from '../assets/cat.png';
-import bubble from '../assets/bubble.png';
+import cat from '../assets/cat.webp';
+import bubble from '../assets/bubble.webp';
 const Home = () => {
   const movePage = useNavigate();
   const onClick = () => {
