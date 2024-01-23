@@ -21,7 +21,7 @@ const KaKaoShareBtn = ({
         title: `${subtitle} '${title}'`,
         description:
           '나에게 맞는 고양이를 찾아보자!\n나와 맞는 고양이는 어떤 유형일까?',
-        imageUrl: 'https://find-my-cat.netlify.app/images/cat.png',
+        imageUrl: 'https://find-my-cat.netlify.app/images/cat.webp',
         link: {
           webUrl: 'https://find-my-cat.netlify.app',
           mobileWebUrl: 'https://find-my-cat.netlify.app',
