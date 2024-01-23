@@ -6,9 +6,8 @@ import resultList from './contents/resultList';
 import KaKaoShareBtn from 'components/KaKaoShareBtn';
 import linkCopyBtn from '../assets/button_link_copy.png';
 import ErrorPage from './ErrorPage';
-import specialCat from '../assets/special_cat_3.png';
 
-const Result = () => {
+const ResultPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const result = Number(searchParams.get('type') ?? '-1');
   const movePage = useNavigate();
@@ -37,10 +36,10 @@ const Result = () => {
         </div>
         <div className="flex flex-col items-center	justify-center my-3">
           <img
-            className="w-1/2 rounded-lg"
-            src={specialCat}
+            className="w-3/4 rounded-lg"
+            src={require(`../assets/result/${resultList[result].img}`)}
             alt="고양이이미지"
-          ></img>
+          />
         </div>
         <div className="whitespace-pre-line	my-6 mx-4">
           {resultList[result].content}
@@ -101,4 +100,4 @@ const Result = () => {
   }
 };
 
-export default Result;
+export default ResultPage;

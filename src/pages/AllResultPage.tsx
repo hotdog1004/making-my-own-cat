@@ -3,9 +3,8 @@ import MainLayout from 'layouts/MainLayout';
 import Button from 'components/Button';
 import { useNavigate } from 'react-router-dom';
 import resultList from './contents/resultList';
-import specialCat from '../assets/special_cat_3.png';
 
-const AllResult = () => {
+const AllResultPage = () => {
   const movePage = useNavigate();
 
   return (
@@ -18,12 +17,13 @@ const AllResult = () => {
         {resultList.map((result, index) => (
           <div
             key={index}
-            className="flex items-center border-solid border-slate-900 border-2 rounded-lg w-[95%] h-full min-h-48 pr-1 m-4"
+            className="flex items-center border-solid border-slate-900 border-2 rounded-lg w-[95%] h-full min-h-48 pr-1 m-4 cursor-pointer"
+            onClick={() => movePage(`/result?type=${index}`)}
           >
             <div className="w-32 h-24 overflow-hidden my-4">
               <img
                 className="w-full h-full object-contain rounded-lg"
-                src={specialCat}
+                src={require(`../assets/result/${result.img}`)}
                 alt="고양이이미지"
               ></img>
             </div>
@@ -52,4 +52,4 @@ const AllResult = () => {
   );
 };
 
-export default AllResult;
+export default AllResultPage;
