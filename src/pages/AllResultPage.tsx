@@ -22,6 +22,8 @@ const AllResultPage = () => {
           >
             <div className="w-32 h-24 overflow-hidden my-4">
               <img
+                width={600}
+                height={600}
                 className="w-full h-full object-contain rounded-lg"
                 src={require(`../assets/result/${result.img}`)}
                 alt="고양이이미지"
