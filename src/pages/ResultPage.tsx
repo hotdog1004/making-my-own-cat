@@ -34,9 +34,11 @@ const ResultPage = () => {
             {resultList[result].title}
           </p>
         </div>
-        <div className="flex flex-col items-center	justify-center my-3">
+        <div className="flex flex-col items-center justify-center my-3">
           <img
             className="w-3/4 rounded-lg"
+            width={600}
+            height={600}
             src={require(`../assets/result/${resultList[result].img}`)}
             alt="고양이이미지"
           />

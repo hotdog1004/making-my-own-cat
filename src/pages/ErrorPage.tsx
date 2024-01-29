@@ -13,6 +13,8 @@ const ErrorPage = () => {
           저런! 잘못된 주소로 접근하셨어요!
         </p>
         <img
+          width={1349}
+          height={1920}
           className="w-1/2 rounded-lg"
           src={specialCat}
           alt="고양이이미지"
